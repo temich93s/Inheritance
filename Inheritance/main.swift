@@ -61,3 +61,19 @@ class Train: Vehicle {
 
 let train = Train()
 train.makeNoise()
+
+
+//MARK: Переопределения геттеров и сеттеров свойства
+print("\n//Переопределения геттеров и сеттеров свойства")
+
+class Car: Vehicle {
+    var gear = 1
+    override var description: String {
+        return super.description + " на передаче \(gear)"
+    }
+}
+
+let car = Car()
+car.currentSpeed = 25.0
+car.gear = 3
+print("Машина: \(car.description)")
