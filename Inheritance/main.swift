@@ -24,3 +24,40 @@ class Vehicle {
 
 let someVehicle = Vehicle()
 print("Транспорт: \(someVehicle.description)")
+
+
+//MARK: Наследование подклассом
+print("\n//Наследование подклассом")
+
+class Bicycle: Vehicle {
+    var hasBasket = false
+}
+
+let bicycle = Bicycle()
+bicycle.hasBasket = true
+print(bicycle.hasBasket)
+
+bicycle.currentSpeed = 15.0
+print("Велосипед: \(bicycle.description)")
+
+class Tandem: Bicycle {
+    var currentNumberOfPassengers = 0
+}
+
+let tandem = Tandem()
+tandem.currentNumberOfPassengers = 2
+tandem.currentSpeed = 22.0
+print("Тандем: \(tandem.description)")
+
+
+//MARK: Переопределение методов
+print("\n//Переопределение методов")
+
+class Train: Vehicle {
+    override func makeNoise() {
+        print("чу-чу")
+    }
+}
+
+let train = Train()
+train.makeNoise()
